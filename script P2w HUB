@@ -1,0 +1,37 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("One Fruit Simulator | P2W X HUB", "DarkTheme")
+
+
+
+
+local Tab = Window:NewTab("Teleport")
+local Section = Tab:NewSection("Teleport")
+Section:NewButton("Starter Island", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3388.55713, 136.208038, 1728.40283, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+end)
+Section:NewButton("Jungle Island", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1986.62134, 131.401001, 598.679565, 0.578843892, 0, 0.81543839, 0, 1, 0, -0.81543839, 0, 0.578843892)
+end)
+Section:NewButton("Clown Island ", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3007.479, 141.433548, -587.198181, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+Section:NewButton("Marine Island", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4941.4248, 137.831787, 56.7856445, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+end)
+Section:NewButton("Usopp Island", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5557.90674, 136.614182, 2040.67004, -0.707134247, 0, -0.707079291, 0, 1, 0, 0.707079291, 0, -0.707134247)
+end)
+
+local Tab = Window:NewTab("misc")
+local Section = Tab:NewSection("misc")
+Section:NewButton("inf skill", "No CD", function()
+    local r = require(game.ReplicatedStorage.INDEXER.ToolsInfo)
+ 
+for i,v in pairs(r) do
+    for i,v1 in pairs(v) do
+        if i == "Z" or i == "X" or i == "C" or i == "V" or i == "B" then
+            v1.cool = 0
+        end
+    end
+end
+end)
