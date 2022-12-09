@@ -2,7 +2,35 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("One Fruit Simulator | P2W X HUB", "DarkTheme")
 
 
+-----------------
 
+players = {}
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+    table.insert(players,v.Name)
+end
+
+local Tab = Window:NewTab("Players")
+local Section = Tab:NewSection("Teleport")
+
+Section:NewDropdown("Select Players", "", players, function(test)
+    Select = test
+end)
+
+
+Section:NewButton("Refresh Players", "", function()
+    table.clear(players)
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+    table.insert(players,v.Name)
+end
+end)
+
+Section:NewButton("tp to player", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select].Character.HumanoidRootPart.CFrame
+end)
+
+
+-----------------
 
 local Tab = Window:NewTab("Teleport")
 local Section = Tab:NewSection("Teleport")
@@ -21,6 +49,11 @@ end)
 Section:NewButton("Usopp Island", "", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5557.90674, 136.614182, 2040.67004, -0.707134247, 0, -0.707079291, 0, 1, 0, 0.707079291, 0, -0.707134247)
 end)
+Section:NewButton("Gacha", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3432.12598, 140.795761, 1771.28772, 0.374604106, 0, 0.92718488, 0, 1, 0, -0.92718488, 0, 0.374604106)
+end)
+
+-----------------
 
 local Tab = Window:NewTab("misc")
 local Section = Tab:NewSection("misc")
@@ -35,3 +68,6 @@ for i,v in pairs(r) do
     end
 end
 end)
+
+-----------------
+
